@@ -3,6 +3,7 @@
   <p class="author">by <%= @book.author %></p>
   <p class="publisher">(<%= @book.publisher %>)</p>
   <p class="description"><%= @book.description %></p>
+  <% bookID = @book.id %>
 </div>
 
 <div class="reviews">
@@ -13,3 +14,16 @@
     </div>
   <% end %>
 </div>
+<%= form_for(@new_review) do |f| %>  
+ <div class="field"> 
+  <%= f.label :review %><br>
+  <%= f.label "Review Author's Name:" %><br>
+  <%= f.text_area :author %><br>
+  <%= f.label "Review text:" %><br>
+  <%= f.text_area :comment %><br>
+  <%= f.hidden_field :book_id, :value => bookID %>
+ </div> 
+ <div class="actions"> 
+  <%= f.submit "Create" %> 
+ </div> 
+<% end %>
