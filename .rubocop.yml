@@ -4,5 +4,10 @@ AllCops:
     - 'bin/bundle'
     - 'vendor/bundle'
     - 'db/schema.rb'
+    - 'db/seeds.rb'
     - vendor/**/*.rb
     - vendor/bundle/**/*
+Style/Documentation:
+        Enabled: false
+Style/MixinUsage:
+        Enabled: false
